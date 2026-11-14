@@ -32,9 +32,7 @@ This project uses machine learning to predict which SKUs will experience chronic
 ## Project Structure
 
 ```text
-ml_zoomcamp/
-└── 2026/
-    └── midterm-project/
-        ├── commerce_project.ipynb   # EDA, feature engineering, model training & evaluation
+midterm-project/
+        ├── midterm.ipynb   # EDA, feature engineering, model training & evaluation
         ├── .gitignore               # Excludes local caches, virtual environments, and raw CSVs
         └── README.md                # Project documentation
