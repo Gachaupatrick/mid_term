@@ -32,7 +32,7 @@ This project uses machine learning to predict which SKUs will experience chronic
 ## Project Structure
 
 ```text
-midterm-project/
+mid_term
         ├── midterm.ipynb   # EDA, feature engineering, model training & evaluation
         ├── .gitignore               # Excludes local caches, virtual environments, and raw CSVs
         └── README.md                # Project documentation
