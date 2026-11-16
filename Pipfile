@@ -13,8 +13,10 @@ catboost = "*"
 lightgbm = "*"
 matplotlib = "*"
 seaborn = "*"
+kagglehub = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.14"
