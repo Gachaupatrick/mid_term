@@ -1,0 +1,3 @@
+# Ignore local datasets and cache folders
+.cache/
+*.csv
