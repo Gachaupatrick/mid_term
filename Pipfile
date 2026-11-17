@@ -15,6 +15,7 @@ matplotlib = "*"
 seaborn = "*"
 kagglehub = "*"
 flask = "*"
+gunicorn = "*"
 
 [dev-packages]
 ipykernel = "*"
