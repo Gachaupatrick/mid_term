@@ -14,6 +14,7 @@ lightgbm = "*"
 matplotlib = "*"
 seaborn = "*"
 kagglehub = "*"
+flask = "*"
 
 [dev-packages]
 ipykernel = "*"
