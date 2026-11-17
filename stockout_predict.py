@@ -1,34 +1,31 @@
-import pickle
+import pickle, pandas as pd
+from flask import Flask, request, jsonify
 
-from flask import Flask
-from flask import request
-from flask import jsonify #turn python dict in our result back to json
-
-
-model_file = "xgb_model.bin"
-
-with open(model_file, "rb") as f_in: #change wb to rb for reading
+# load saved model
+model_file = "model/xgb_model.bin"
+with open(model_file, "rb") as f_in:
     xgb_model = pickle.load(f_in)
     
+# Intialize the Flask app
 app = Flask("stockout")
 
+# Define the predict route
 @app.route("/predict", methods=["POST"])
 def predict():
-    sku = request.get_json()  #will get the json file below and return it as a python dictionary 
+    sku = request.get_json()  #will get the json file below and return it as a python dictionary
+    
+    # Convert the dictionary into a Pandas DataFrame so XGBoost can read it
+    df = pd.DataFrame([sku]) 
     
     # Get probability
-    y_pred = xgb_model.predict_proba(sku)[0,1]
+    y_pred = xgb_model.predict_proba(df)[0,1]
     
     # Binary decision    
     is_stockout = bool(y_pred >= 0.5)
     
     result = {
-        
-        # Cast both values explicitly to standard Python float() and bool() types inside your dictionary
-        # Why : because Flask is returning a NumPy boolean or float type, which standard Python jsonify cannot serialize into JSON.
-        'stockout_probability': float(y_pred), 
+        'stockout_probability': float(y_pred),
         'stockout': is_stockout
-        
     }
     
     return jsonify(result)
