@@ -1,6 +1,6 @@
 # Inventory & Stockout Optimization: Predictive Modeling
 
-Predicting chronic stockout risk and total inventory holding/shortage costs across 45,000 simulated SKU replenishment cycles using tree-based machine learning models (**Random Forest** and **XGBoost**).
+Predicting chronic stockout risk across 45,000 simulated SKU replenishment cycles using tree-based machine learning models (**Random Forest** and **XGBoost**).
 
 ## Problem Statement
 
@@ -10,7 +10,7 @@ Every inventory replenishment decision balances two competing operational costs:
 
 While traditional inventory policies size safety stock buffers around **demand variability**, ~55% of policies ignore **supplier lead-time variability**. When supplier lead times fluctuate unpredictably, demand-only safety buffers fail—causing chronic stockouts even when demand is stable.
 
-This project uses machine learning to predict which SKUs will experience chronic stockouts (`stockout_occurred`) and estimate total replenishment costs (`total_cost`), enabling data-driven safety stock and service-level optimization.
+This project uses machine learning to predict which SKUs will experience chronic stockouts (`stockout_occurred`) enabling data-driven safety stock and service-level optimization.
 
 ---
 
